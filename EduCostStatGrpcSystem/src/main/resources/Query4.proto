@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_package = "com.example.proto";
+
+
+message Query4Request {
+  int32 pastYears=1;
+  string type=2;
+  string length=3;
+}
+
+message Query4Response {
+  repeated Result4 result4 = 1;
+}
+
+message Result4 {
+  string State = 1;
+  double GrowthRate = 2;
+  int32 pastYears = 3;
+}
+
+
+service Query4Service {
+  rpc Query4(Query4Request) returns (Query4Response);
+}

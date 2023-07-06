@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option java_package = "com.example.proto";
+
+
+message Query5Request {
+  string year = 1;
+  string type = 2;
+  string length = 3;
+  string region = 4;
+}
+
+message Query5Response {
+  repeated Result5 result5 = 1;
+}
+
+message Result5 {
+  string year = 1;
+  string type = 2;
+  string length = 3;
+  string region = 4;
+  double Expense = 5;
+}
+
+
+service Query5Service {
+  rpc Query5(Query5Request) returns (Query5Response);
+}

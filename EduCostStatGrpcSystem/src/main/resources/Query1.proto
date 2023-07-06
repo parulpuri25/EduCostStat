@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option java_package = "com.example.proto";
+
+
+message Query1Request {
+  string year = 1;
+  string state = 2;
+  string type = 3;
+  string length = 4;
+  string expense = 5;
+  string value = 6;
+}
+
+message Query1Response {
+  repeated Result result = 1;
+}
+
+message Result {
+  string Year = 1;
+  string State = 2;
+  string Type = 3;
+  string Length = 4;
+  string Expense = 5;
+  string value = 6;
+}
+
+
+service Query1Service {
+  rpc Query1(Query1Request) returns (Query1Response);
+}
